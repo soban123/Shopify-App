@@ -131,9 +131,9 @@ export default class NewSteps extends React.Component {
         let tagNameAfter = tagName.replace(/ /g, "-")
 
         return (
-                 this.state.iswatermark ? <Popup handleWatermark={this.handleWatermark} handleChange={this.handleChange} /> : 
+                
             <AppProvider>
-
+ {   this.state.iswatermark ? <Popup handleWatermark={this.handleWatermark} handleChange={this.handleChange} /> : ''} 
                 <Page title="Step 1" subtitle="Select which type of image to edit">
 
                     {/* step 1 start */}
