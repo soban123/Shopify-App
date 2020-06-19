@@ -63,9 +63,9 @@ function Detail(props) {
             />,
             'my-product-image-file-name',
 
-            <Badge className="rename" >RENAMED</Badge>,
-            <Badge className="rename"  >RENAMED</Badge>,
-            <Badge className="rename" >CRUSHED</Badge>,
+            <Badge className="rename"  > <div  className="renamed-badge">   RENAMED </div> </Badge>,
+            <Badge className="rename"  ><div  className="renamed-badge">   RENAMED </div></Badge>,
+            <Badge className="rename" ><div  className="renamed-badge">   CRUSHED </div></Badge>,
 
             <Badge status="success">48% SAVED</Badge>,
 
