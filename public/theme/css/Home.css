@@ -1,0 +1,54 @@
+
+
+.Polaris-Page__Content {
+  margin: 0rem 0;
+}
+
+
+.head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.pgsec{
+  /* border: solid 2px black; */
+  width: 1100px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  background: rgb(52, 0, 98) !important;
+  color: white;
+  justify-content: flex-start;
+  margin-top: 10%;
+  height: 96px;
+  font-size: 25px;
+  align-items: center;
+  
+}
+.Polaris-Card{
+  border:none;
+  
+}
+.cardsec{
+   
+  /* border-top: none !important; */
+  
+
+  width: 20%;
+}
+
+.cardsecmid{
+  /* border: black solid 1px; */
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  
+
+}
+*{
+  font-family: sans-serif;
+}

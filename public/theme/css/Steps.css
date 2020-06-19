@@ -1,0 +1,138 @@
+
+.Polaris-Page {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 130.8rem;
+}
+  
+*{
+  font-family: sans-serif;
+}
+  .heading{
+
+    font-size: 15px;
+  }
+
+  .fl{
+      display: flex;
+  }
+
+.inside_child{
+    display: flex;
+    justify-content: space-between;
+}
+
+  .inside_card{
+    display: flex;
+    flex-wrap: wrap;
+    width: 472px;
+    margin-left: 10px;
+  }
+  .child1{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 311px;
+  }
+  .middle_card{
+      display: flex;
+      flex-direction: column;
+  }
+
+  .box{
+      display: flex;
+      flex-direction:column ;
+  }
+  .spcbtn{
+      margin-left: 10px;
+  }
+
+  .middle_card{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  
+
+  .block{
+      background: rgb(100, 100, 100);
+      color: honeydew;
+      text-align: center;
+     
+  }
+
+  .block2{
+    background: rgb(117, 236, 38);
+    color: honeydew;
+    text-align: center;
+}
+
+  .Child2{
+    display:flex;
+    width:58%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .step5{
+    display: flex;
+    /* flex-wrap: wrap;  */
+    flex-direction: row;
+    width: 851px;
+    align-items: center;
+}
+.parg{
+  font-family: sans-serif;
+ 
+ 
+  font-style: normal;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.05em;
+  
+  color: #808080;
+  
+}
+.step5 .para{
+    margin-left: 15px;
+}
+.bulk{
+  background: #230051;
+  border: none;
+ 
+}
+
+label{
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+}
+.Polaris-Choice__Label{
+  color:black;
+  font-weight: bold;
+  font-size: 17px;
+}
+.Polaris-Header-Title__SubTitle p{
+
+
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+
+ 
+}
+
+.Polaris-Card .Polaris-Heading {
+  /* font-family: SF Pro Display; */
+  font-style: normal;
+  /* font-weight: bold; */
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  font-family: sans-serif;
+}

@@ -1,0 +1,18 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.sidebar{
+    background: rgb(52, 7, 92);
+    height: 100%;
+    width: 8%;
+    position: fixed;
+}
+
+.head-sidebar{
+   
+    height: 15%;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,531 @@
+
+.Polaris-Button--primary {
+    // width: 154px !important;
+    // height: 42px !important;
+    font-size: 15px;
+    
+    background: #230051 !important;
+    
+
+}
+
+*{
+    font-family: sans-serif;
+}
+
+$font-family: 'Montserrat', sans-serif;
+  $background-image:radial-gradient(324.85% 141.93% at 106.4% 100%, #230051 0%, #230051 100%);
+  $color:  #230051;
+  $background : linear-gradient(95.26deg, #230051 7.67%, #230051 119.78%); 
+
+
+//sIDEABR
+
+
+.Nav {
+  
+  
+    display: flex;
+    flex-direction: column;
+    // width: 210px;
+    height: 100%;
+    position: fixed;
+    margin-left: -100% ;
+    font-size: 15px;
+    z-index: 25;
+    background-image: $background-image ;
+    width: 17.8%;
+    min-width: 220px;
+    height: 100%;
+    position: fixed;
+    color: white;
+    transition: all .5s ease ;
+    margin-left: -100% ;
+    flex-wrap: nowrap !important;
+
+
+    & img, svg{
+        width: 30px;
+    }
+  }
+  
+  .Nav div {
+    padding:  20px;
+    display: inline-flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding: auto;
+    
+  }
+  
+  
+  
+  ._head {
+    
+    display: flex;
+    
+    align-items: center;
+    color: white;
+    justify-content: center;
+  }
+  
+
+  
+  .links {
+      color: white;
+    font-size: 13px;
+    font-weight: 510 ;
+    letter-spacing: 0.05em;
+    
+    margin-left: 15px;
+    @media (max-width: 695.98px) { margin-left: 0; }
+    &:hover{
+  
+      text-decoration: none;
+    //   color: #230051;
+    }
+  }
+  
+  ._head {
+  
+    width: 100%;
+  
+    padding-top: 10px;
+      position: relative;
+        text-align: center;
+    & .svg{
+  
+      width: 170px ;
+  
+    }
+  }
+  
+  
+  
+  .btn1 {
+  
+    font-size: 20px;
+    height: 25px;
+    margin-top: 20px;
+    font-weight: 500;
+  
+    
+  
+    & i{
+        // color: white;
+      
+    }
+  
+    &:hover{
+  
+    //   background: rgb(250, 255, 255);
+  
+      border-radius: 0px 50px 50px 0px;
+    }
+  
+  }
+  
+  .insideDiv {
+  
+  
+    height: 100%;
+  
+  }
+  
+  .insideDiv > div {
+    padding: 25px  ;
+  
+    display: flex;
+    align-items: center ;
+    @media (max-width: 1370.98px) { padding: 25px 15px; }
+  
+  
+  }
+  
+  
+  #check {
+    display: none ;
+  }
+  
+  
+  
+  
+  #dull-bakground{
+  
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  
+    z-index: 24;
+    position: fixed;
+  
+    transition: all .7s ease ;
+    
+    display: none;
+    opacity:0;
+  }
+  
+     #check:checked  ~ #dull-bakground{
+     
+      display: block;
+      opacity: 1;
+  
+      }
+  
+  #check:checked ~ .Nav{
+  
+      margin-left: 0;
+  }
+  
+  .ClosedsideBar{
+    height: 100%;
+    background-image: $background-image ;
+    
+    position: fixed;
+    width: 10%;
+    z-index:22;
+    text-align: center ;
+  
+    & div{
+      height: 30px;
+      margin-bottom: 50px;
+  
+     
+    }
+  
+    & .btn1  i{
+      
+      font-size: 30px;
+      
+      padding-top: 5px;
+      color: white !important;
+   
+    }
+
+    & img, svg{
+        width: 34px;
+    }
+  
+  }
+  
+  #align-box{
+    
+    padding-top: 30px;
+    font-size: 35px;
+    
+    color: white;
+  
+  
+  }
+  
+  
+  #cross{
+  
+    // margin-left: 100%;
+  
+    // color: $color ;
+    // font-size: 25px;
+  
+  
+    & .cross{
+      color: white;
+    //   padding: 3px;
+      font-size: 62px; 
+       }
+  }
+  
+  
+  #check2{
+    display: none;
+    position: absolute ;
+  }
+  
+  #check2:checked ~ .Nav{
+  
+    margin-left: -100%;
+  }
+
+
+  .Polaris-ResourceItem__Container {
+    padding: 1.2rem 2rem !important;
+    
+    height: 41px !important;
+   
+    // background: #F8F8F8 !important;
+    border-radius: 5px !important;
+}
+.Polaris-Page {
+    // margin: 0 auto;
+    padding: 0;
+    
+
+    margin-left: 136px !important;
+    max-width: 1200px !important;
+   
+
+}
+
+
+
+
+.Polaris-Heading {
+    color: $color;
+    // font-size: 26px !important;
+    // line-height: 31px !important;
+}
+.costum-Card{
+    width:112% !important;
+}
+
+.Polaris-Subheading {
+    font-size:  26px !important;
+}
+
+.Polaris-Card{
+    width: 100%;
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.03em;
+    .Polaris-Card__SectionHeader{
+        padding: 12px;
+
+        .Polaris-Heading {
+            font-family: sans-serif;
+            // font-size: 2.3rem;
+            // color: #230051;
+            // font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 21px;
+            letter-spacing: 0.01em;
+            color: #000000;
+        }
+
+    }
+
+
+
+
+
+
+
+    .Polaris-ResourceList__ResourceListWrapper{
+        margin-top: 0%;
+    }
+    .Polaris-Button{
+        border-radius: 27.5px !important;
+      &:hover{
+        background:#230051;
+        color: white;
+
+      }
+    }
+
+
+
+}
+Polaris-Choice__Label{
+    color:blue !important;
+}
+
+.icon{
+    height: 39px;
+}
+
+.Polaris-Card .Polaris-Heading{
+    font-family: SF Pro Display;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+letter-spacing: 0.01em;
+}
+.after{
+    border-radius: none !important;
+}
+
+
+
+.Polaris-ResourceList__ItemWrapper{
+    border:1px solid rgb(241, 238, 238) !important;
+    border-radius: 10px;
+    margin: 9px;
+
+}
+
+.Polaris-ResourceItem__Container {
+    &:hover{
+
+        background: #230051 !important;
+        color:white
+    }
+    
+}
+
+.Polaris-ResourceList__ItemWrapper{
+    background: #F8F8F8;
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    margin: 15px 0px;
+}
+
+.IconColor{
+    color: green($color: #000000);
+}
+
+.Polaris-Button--sizeLarge {
+    min-height: 4.4rem;
+    min-width: 13.4rem;
+    padding: 1.1rem 2.4rem;
+    background: #230051 !important;
+    color: white !important;
+}
+.Polaris-Button{
+    background: #230051 !important;
+    color: white !important; 
+}
+.IconPara{
+    padding:10px;
+}
+
+.Polaris-Badge.Polaris-Badge--statusSuccess{
+    border-radius: 3px !important;
+    font-family: SF Pro Display;
+    font-size: 17px;
+}
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.Polaris-Badge.Polaris-Badge--statusInfo{
+    background: #dfe3e8;
+    border-radius: 0px !important;
+    color: black;
+    font-family: SF Pro Display;
+    font-size: 17px;
+
+
+  }
+  .Polaris-Badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 0.8rem;
+    background-color: var(--p-action-secondary-disabled, #dfe3e8);
+    border: 0.2rem solid var(--p-surface, white);
+    border-radius: 3px !important;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    color: var(--p-text, #454f5b);
+    font-weight: var(--p-badge-font-weight, 400);
+    border: none !important;
+    .rename{
+
+  
+        font-family: SF Pro Display;
+        font-size: 17px !important;
+        width: 99px !important;
+        height: 20px !important;
+        left: 697px !important;
+        top: 870px !important;
+        background: #230051 !important;
+        border-radius: 3px !important;
+    
+    }
+   
+
+}
+
+
+
+.Polaris-Thumbnail--sizeLarge {
+    width: 17rem !important;
+}
+.Polaris-DataTable__Cell--verticalAlignTop {
+    vertical-align: middle !important;
+}
+
+.Polaris-ProgressBar {
+    border-radius: 50px !important;
+    height: 2.6rem !important;
+    box-sizing: border-box !important;
+    margin: 9px 0px;
+}
+
+.Polaris-ProgressBar__Indicator {
+   
+    border-radius: 50px !important;
+    background-color: #21b404 !important;
+  
+}
+
+
+
+
+
+.right-stack{
+    justify-content: flex-end;
+}
+
+
+.Polaris-Badge {
+    
+    background-color: transparent !important;
+}
+
+
+.renamed-badge{
+    background-color: #230051;
+    color: white;
+    padding: 6px 8px;   
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    border-right: 1px solid gray;
+    border-radius: 3px;
+    height: 28px;
+
+
+}
+
+.right-border{
+    height: 23px;
+    width: 2px;
+    vertical-align: text-bottom;
+    background: #d2cbcb;
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.di-flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Polaris-Badge--statusSuccess .Polaris-Badge__Content {
+   
+    background: #50B83C;
+    color: white !important;
+    padding: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.product-title{
+    // max-width: 200px;
+    white-space: nowrap; 
+    width: 220px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    
+}
+
+//@import 'styles/public-api';
+//@import 'styles/global';
+//@import 'styles/components';

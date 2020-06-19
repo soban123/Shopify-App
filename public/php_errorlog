@@ -1,0 +1,1 @@
+[23-Mar-2020 14:00:11 CST6CDT] PHP Fatal error:  require(): Failed opening required '/home/mamdaniw/shopifyapp/public/../vendor/autoload.php' (include_path='.:/usr/local/php72/pear') in /home/mamdaniw/shopifyapp/public/index.php on line 24
