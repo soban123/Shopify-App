@@ -53,3 +53,21 @@ Route::get('app', function () {
 });
 
 //Route::get('get_products','HomeController@get_products');
+
+
+
+Route::get('/reduce',function(){
+    
+
+    file_put_contents(public_path('images/a.jpg'), file_get_contents(request('url')));
+
+    header('Content-Type: image/jpg'); 
+
+    $new_image = \Image::make(public_path('images/a.jpg'))->encode('jpg', request("reduce"))->save(public_path('images/a.jpg'));
+
+    return (new \Illuminate\Http\Response($new_image))->header('Content-Type', 'image/jpg');
+});
+
+
+
+Route::post('/upload-image' ,'HomeController@imageUpload' );

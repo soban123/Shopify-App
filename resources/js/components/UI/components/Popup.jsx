@@ -10,20 +10,64 @@ import {
     FormLayout,
     TextField,
     RangeSlider,
-    ButtonGroup
+    ButtonGroup ,
+    Select,
+    Heading
 } from "@shopify/polaris";
-
+import DropdownPopup from './Dropdown-Popup'
 export default function Popup(props) {
     const [rangeValue, setRangeValue] = useState(32);
+    
+    const [imagePath, setimagePath] = useState() ;
 
     const handleRangeSliderChange = useCallback(
         value => setRangeValue(value),
         []
     );
     const [active, setActive] = useState(true);
+        const [text, settext] = useState('example')
+    const [selected, setSelected] = useState('top-left');
+        const [imageArr, setimageArr] = useState( <img  src ={'https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/6/2017/11/04133712/waterfall.jpg'} style={{ width:"92%", height:"430px" }} />) ;
+  
+    const options = [
+      
+      {label: 'top-left', value: 'top-left'},
+      {label: 'Top-center', value: 'top-center'},
+      {label: 'Top-right', value: 'top-right'},
+      {label: 'Bottom-left', value: 'bottom-left'},
+      {label: 'Bottom-center', value: 'bottom-center'},
+      {label: 'Bottom-right', value: 'bottom-right'},
+      {label: 'Center-left', value: 'center-left'},
+      {label: 'Center-center', value: 'center-center'},
+      {label: 'Center-right', value: 'center-right'},
 
+      
+    ];
+
+    const textHandler = (e)=>{
+       
+        settext(e);
+
+    }
+
+    const handleSelectChange2 = (e) => {
+        setSelected(e);
+        
+
+    }
+
+    const handleUploadImage = (path) => { 
+
+    console.log( 'popupImgePth' , path )
+    let newPath =  path.replace("E:\\ShopifyApp-New-Git\\shopifyapp\\public\\", "http://127.0.0.1:8000/");
+    setimagePath(newPath);
+    console.log( 'newpath' , newPath)
+    
+    setimageArr( <img  src ={`${newPath}`} style={{ width:"92%", height:"430px"}} /> )
+
+}
     const handleChange = useCallback(() => setActive(!active), [active]);
-console.log(props)
+
     return (
         <div style={{ height: "800%" }}>
             <Button onClick={handleChange}>Open</Button>
@@ -46,36 +90,38 @@ console.log(props)
             >
                 <Modal.Section>
                     <div style={{ display: "flex" }}>
-                        <div style={{ height: "500", width: "60%" }}>
+                        <div style={{ Height: "430", width: "60%" }}>
 
-                            <div style={{ background: "yellow" }} />
-                            <img  src ={require("../images/bag.png")} style={{ width:"92%", height:"73%"}} />
-                            {/* <Thumbnail
-                               source={require("../images/bag.png")} 
-                                size="large"
-                                alt="Black choker necklace"
-                            /> */}
-                        </div>
-                        <div style={{ height: "500px" }}>
+                            <div style={{ position:'relative' }} >
+                            { imageArr
+                                  } 
+                            <h1 id="watermarkText" style={{opacity:`${rangeValue/100}`}} className={`${selected}`}>  {text}   </h1>
+                          </div>
+                          </div>
+                        
+
+                        <div style={{ maxHeight: "500px" , width:'260px' }}>
                             <Form>
-                                <h1>Image water Mark</h1>
+                                < div className="h1" >IMAGE WATERMARK</div >
                                 <FormLayout>
-                                    <TextField label="Watermark Type" type="url" />
-                                    <TextField label="Template" type="url" />
-
-                                    <ButtonGroup>
-                                        <h1>@WATERMARK</h1>
-                                        <Button >Save</Button>
-                                    </ButtonGroup>
-
+                                    
+                            <DropdownPopup  handleUploadImage={handleUploadImage}  function={ textHandler } />
+                           
+                            
                                     <RangeSlider
                                         label="Opacity percentage"
                                         value={rangeValue}
                                         onChange={handleRangeSliderChange}
                                         output
                                     />
-                                    <TextField label="Watermark Type" type="url" />
-                                    <TextField label="Template" type="url" />
+                                   
+
+                                    <Select
+                                        label="Placement"
+                                        options={options}
+                                        onChange={   handleSelectChange2      }
+                                        value={selected}
+                                        />
                                 </FormLayout>
                             </Form>
                         </div>

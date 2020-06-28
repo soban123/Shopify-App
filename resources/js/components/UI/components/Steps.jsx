@@ -58,6 +58,7 @@ export default class NewSteps extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleWatermark = this.handleWatermark.bind(this);
+        this.myFunction = this.myFunction.bind(this);
     }
 
     handleSubmit() {
@@ -92,10 +93,36 @@ export default class NewSteps extends React.Component {
     handleWatermark(){
         
         let {iswatermark } = this.state ;
-        console.log('watermark' , iswatermark)
             this.setState({ iswatermark: !iswatermark })
         
     }
+
+    myFunction  () {
+            
+        // Declare variables
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById('myInput');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName('li');
+      
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          
+
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+        
+
+      }
+
+      
 
     render() {
         const activator = (
@@ -117,6 +144,26 @@ export default class NewSteps extends React.Component {
                 Choose File Name
             </Button>
         );
+
+        // const searchList = [ <li><a href="#">Adele</a></li> ];
+         let search =           this.state.fileNameOptions.map((item) => {
+            return (
+              
+                <li  onClick={ async () => {
+                    await this.setState({fileName: item,fileNameButton1D:false})
+                } } ><a > {item}</a> </li>
+               
+         )
+        })
+
+        window.addEventListener('click', function(e){   
+            if(e.target.id !== 'myInput' ) {
+                if(document.getElementById('myUL')  )
+                document.getElementById('myUL').classList.add('hide'); 
+
+            }
+          });
+    
         const tagNameButton = (
             <Button onClick={() => {
                 this.setState({tagNameButtonD: !this.state.tagNameButtonD})
@@ -132,8 +179,8 @@ export default class NewSteps extends React.Component {
 
         return (
                 
-            <AppProvider>
- {   this.state.iswatermark ? <Popup handleWatermark={this.handleWatermark} handleChange={this.handleChange} /> : ''} 
+            <AppProvider id="Body">
+ {  !this.state.iswatermark ? <Popup handleWatermark={this.handleWatermark} handleChange={this.handleChange} /> : ''} 
                 <Page title="Step 1" subtitle="Select which type of image to edit">
 
                     {/* step 1 start */}
@@ -158,7 +205,7 @@ export default class NewSteps extends React.Component {
                     </Card>
                 </Page>
                 {/* step 2 start */}
-                <Page title="Step 2" subtitle="Define File name">
+                <Page title="Step 2" id="step2-page" subtitle="Define File name">
 
                     <Card id="hand-Made" sectioned title="Define File Name">
                         <p > What product shall we include in your image <b> file image ? </b></p>
@@ -181,9 +228,9 @@ export default class NewSteps extends React.Component {
                                 />
                             </Popover>
                             <div>
-                                <div style={{ marginLeft: "115px" }}>
+                                <div style={{ marginLeft: "115px" , maxWidth:'300px' }}>
                                     <div className="block"></div>
-                                    <Badge status="info">After</Badge>
+                                    <Badge status="info">Before</Badge>
                                     <Stack>
                                         <TextStyle
                                             style={{fontSize: "12px"}}>{this.state.fileName != '' ? fileNameAfter : 'File-Name'}.jpg</TextStyle>
@@ -191,9 +238,9 @@ export default class NewSteps extends React.Component {
                                 </div>
                             </div>
                             <div>
-                                <div>
+                                <div style={{ maxWidth:'300px' }}>
                                     <div className="block"></div>
-                                    <Badge status="success">Before</Badge>
+                                    <Badge status="success"> After</Badge>
 
                                     <Stack>
                                         <TextStyle
@@ -206,15 +253,25 @@ export default class NewSteps extends React.Component {
                         </ButtonGroup>
                         <br/>
                         <TextField
+                        onFocus={ ()=>{ document.getElementById('myUL').classList.remove('hide');   } }
+                        id="myInput" 
                             placeholder="+ Add Custom Text"
                             value={this.state.fileName}
                             onChange={(value) => {
                                 this.setState({
                                     fileName: value,
                                 })
+                                this.myFunction();
                             }
                             }
+                        
+
                         />
+                        <ul id="myUL" className="hide" >
+
+                        {search}
+                           
+                        </ul>
                         <div style={{display: "flex"}}>
                             <span> <Icon
                                 source={MobilePlusMajorMonotone}/> </span>

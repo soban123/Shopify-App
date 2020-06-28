@@ -6,6 +6,7 @@ use App\Product;
 use App\ProductImage;
 use App\ProductVariant;
 use App\UserSettings;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -106,6 +107,14 @@ class HomeController extends Controller
     public function dashboard()
     {
         $user_id = auth()->user()->id;
+    }
+
+    public function imageUpload(Request $request){
+        $file = $request['file'];
+        $name = $request['name'];
+       
+       $path =  $request['file']->move(public_path('images'), $name);
+        return $path;
     }
 
     public function get_dashboard_statistics()
