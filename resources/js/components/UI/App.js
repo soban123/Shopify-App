@@ -10,6 +10,10 @@ import Sidebar from "./components/Sidebar";
 import Steps from "./components/Steps";
 import Detail from "./components/Detail";
 import Crop from "./components/Crop";
+import Alttag from './components/Alttag';
+import Filename from './components/Filename';
+import Imagecompression from './components/Imagecompression';
+import Addwatermark from './components/Addwatermark';
 export default class App extends React.Component {
     render() {
         return <BrowserRouter>
@@ -18,7 +22,11 @@ export default class App extends React.Component {
                 <Switch>
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/dashboard" component={Dashboard}/>
+                    <Route exact path="/alttag" component={Alttag}/>
+                    <Route exact path="/filename" component={Filename}/>
+                    <Route exact path="/imagecompression" component={Imagecompression}/>
                     <Route exact path='/imageoptimization' component={Steps}/>
+                    <Route exact path='/addwatermark' component={Addwatermark}/>
                     <Route exact path='/NewDashboard' component={NewDashboard}/>
                     <Route exact path='/Popup' component={Popup}/>
                     <Route exact path='/Detail' component={Detail}/>

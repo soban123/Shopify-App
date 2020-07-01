@@ -8,7 +8,7 @@
     font-size: 15px;
     
     background: #230051 !important;
-    
+    color: white !important;
 
 }
 
@@ -53,7 +53,7 @@ $font-family: 'Montserrat', sans-serif;
   }
   
   .Nav div {
-    padding:  20px;
+    padding:  17px;
     display: inline-flex;
     /* justify-content: center; */
     align-items: center;
@@ -320,11 +320,11 @@ $font-family: 'Montserrat', sans-serif;
     }
     .Polaris-Button{
         border-radius: 27.5px !important;
-      &:hover{
-        background:#230051;
-        color: white;
+      // &:hover{
+      //   // background:#230051;
+      //   color: white;
 
-      }
+      // }
     }
 
 
@@ -385,12 +385,12 @@ letter-spacing: 0.01em;
     min-height: 4.4rem;
     min-width: 13.4rem;
     padding: 1.1rem 2.4rem;
-    background: #230051 !important;
-    color: white !important;
+    // background: #230051 !important;
+    // color: white !important;
 }
 .Polaris-Button{
-    background: #230051 !important;
-    color: white !important; 
+    // background: #230051 !important;
+    // color: white !important; 
 }
 .IconPara{
     padding:10px;

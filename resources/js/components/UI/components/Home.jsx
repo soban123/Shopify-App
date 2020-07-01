@@ -19,9 +19,9 @@ import {
 export default class Home extends React.Component {
     render() {
         return (
-            <AppProvider>
-                <Page >
-                    <div className="head">
+          
+                <Page  >
+                    {/* <div className="">
 
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ export default class Home extends React.Component {
                             </defs>
                         </svg>
 
-                    </div>
+                    </div> */}
 
                     <div className="pgsec">
 
@@ -212,7 +212,7 @@ export default class Home extends React.Component {
                         </Layout>
                     </div>
                 </Page>
-            </AppProvider>
+            
         );
     }
 }

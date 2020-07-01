@@ -11,6 +11,7 @@
     <a href="{{route('broken_images')}}">View Broken Images</a>
     <a href="{{route('watermark_page')}}">Add Watermark</a>
     <a href="{{route('resize_image')}}">Resize Image</a>
+    <a href="{{route('app')}}">beta app</a>
 @endsection
 
 @section('scripts')

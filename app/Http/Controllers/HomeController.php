@@ -31,6 +31,7 @@ class HomeController extends Controller
         $user_settings=UserSettings::whereUserId(auth()->user()->id);
         $request = $shop->api()->rest('GET', '/admin/api/products.json');
         $products = $request->body->products;
+        // dd($products);
         foreach ($products as $prod) {
             $missingImage = 0;
             if (count($prod->images) <= 0)

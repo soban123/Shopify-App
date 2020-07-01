@@ -10,7 +10,9 @@ import {
    List ,
    Caption,
    TextField ,
-   Select
+   Select,
+   ColorPicker ,
+   RangeSlider
 
 
     
@@ -23,6 +25,7 @@ export default function DropdownPopup(props) {
     const options = [
       {label: 'Image', value: 'image'},
       {label: 'Text', value: 'text'},
+    
 
       
     ];
@@ -32,7 +35,29 @@ export default function DropdownPopup(props) {
       const hasError = rejectedFiles.length > 0;
 
 
-      
+      const [color, setColor] = useState('#ffff');
+    
+      const handleChange = (e) =>{
+        console.log(e.target.value)
+        setColor(e.target.value);
+        props.ColorHandler(e.target.value)
+      };
+
+      useEffect(() => {
+       fetch('get_columns')
+       .then( res => res.json()  )
+       .then( data => console.log(data) )
+      }, [])
+
+     
+
+      const [rangeValue, setRangeValue] = useState(32);
+
+      const handleRangeSliderChange = (e)=>{
+        setRangeValue(e);
+        props.FontHandler(e)
+      }
+
       
         const handleDrop =   (e)=>{
           console.log('hndledrop' , e[0])
@@ -107,18 +132,22 @@ export default function DropdownPopup(props) {
                
                 document.getElementById('imageUploadButton').classList.remove('hide')
                 document.getElementById('text-dropdown').classList.add('hide')
+                
             }
             else if( e == 'text' ){
 
+              document.getElementById('text-dropdown').classList.remove('hide')
                 document.getElementById('imageUploadButton').classList.add('hide')
-                document.getElementById('text-dropdown').classList.remove('hide')
+            
             }
+          
         }
 
 //End Image Upload Button      
 
 //Text Field
 const [value, setValue] = useState('example');
+const [property, setProperty] = useState('example');
 
 console.log('path' , props );
 
@@ -151,7 +180,22 @@ console.log('path' , props );
     </div>
     
 
-    <div id="text-dropdown" className="hide"  >  <TextField label="Store name" value={value}  onChange={ (e)=>{ setValue(e) ;  props.function(e)   ; }} /> </div>
+    <div id="text-dropdown" className="hide"  >  
+    <TextField label="Store name" value={value}  onChange={ (e)=>{ setValue(e) ;  props.Text(e)   ; }} /> 
+    <br />
+      <label for="color"> Choose Watermark Color </label>
+      <input type="color" id='color' value={color} onChange={handleChange} />
+      {/* <ColorPicker onChange={handleChange} color={color} allowAlpha={true} /> */}
+  
+      <br />
+    <RangeSlider
+        label="Fontsize"
+        value={rangeValue}
+        onChange={handleRangeSliderChange}
+        output
+      />
+    </div>
+
     </div>
     </div>
     

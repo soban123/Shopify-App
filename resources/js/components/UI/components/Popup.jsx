@@ -26,6 +26,8 @@ export default function Popup(props) {
     );
     const [active, setActive] = useState(true);
         const [text, settext] = useState('example')
+        const [color, setColor] = useState('gray')
+        const [font, setFont] = useState(30)
     const [selected, setSelected] = useState('top-left');
         const [imageArr, setimageArr] = useState( <img  src ={'https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/6/2017/11/04133712/waterfall.jpg'} style={{ width:"92%", height:"430px" }} />) ;
   
@@ -44,9 +46,22 @@ export default function Popup(props) {
       
     ];
 
-    const textHandler = (e)=>{
+    const TextHandler = (e)=>{
        
         settext(e);
+        // console.log(e);
+
+    }
+    const FontHandler = (e)=>{
+       
+        setFont(`${e}px`);
+        console.log('font',e);
+
+    }
+    const ColorHandler = (e)=>{
+       
+        setColor(e);
+        console.log('color',e);
 
     }
 
@@ -95,7 +110,7 @@ export default function Popup(props) {
                             <div style={{ position:'relative' }} >
                             { imageArr
                                   } 
-                            <h1 id="watermarkText" style={{opacity:`${rangeValue/100}`}} className={`${selected}`}>  {text}   </h1>
+                            <p id="watermarkText" style={{opacity:`${rangeValue/100}` , color:color , fontSize:font}} className={`${selected}`}>  {text}   </p>
                           </div>
                           </div>
                         
@@ -105,7 +120,7 @@ export default function Popup(props) {
                                 < div className="h1" >IMAGE WATERMARK</div >
                                 <FormLayout>
                                     
-                            <DropdownPopup  handleUploadImage={handleUploadImage}  function={ textHandler } />
+                            <DropdownPopup  handleUploadImage={handleUploadImage} ColorHandler={ColorHandler} FontHandler={FontHandler}  Text={ TextHandler } />
                            
                             
                                     <RangeSlider
