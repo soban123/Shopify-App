@@ -50,7 +50,7 @@ Route::post('resize_image', 'ProductController@resize_image');
 
 Route::get('app', function () {
     return view('app');
-});
+})->name('app');
 
 //Route::get('get_products','HomeController@get_products');
 
